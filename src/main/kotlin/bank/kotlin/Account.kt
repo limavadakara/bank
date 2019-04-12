@@ -2,7 +2,7 @@ package bank
 
 import bank.kotlin.Transaction
 
-class Account {
+class Account(newTransaction: (Double, Boolean, Double) -> Transaction = { amount: Double, isCredit: Boolean, resultingBalance: Double -> Transaction(amount, isCredit, resultingBalance) }) {
     private var balance : Double = 0.00
     private var transactions : MutableList<Transaction> = ArrayList()
 
